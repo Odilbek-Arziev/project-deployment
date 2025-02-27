@@ -18,7 +18,6 @@ def get_search(request):
 
 def index(request):
     posts = Post.objects.all()
-    print(posts)
     posts = filter_posts(posts, request.GET.get('order_by'))
     posts = Post.objects.all()
     pages = Paginator(posts, 2)
